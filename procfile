@@ -1,2 +1,2 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/webb-runner.jar -
+web: java $JAVA_OPTS -jar target/dependency/web-runner.jar --port$PORT target/*.war
 >>>>>>> branch 'master' of https://github.com/kandreashish/loginsystem1.git
