@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="g.*"%>
 <!doctype html>
 <html>
 <script type=text/javascript src="script/validate.js"></script>
@@ -15,36 +16,50 @@ if(session.getAttribute("uname")==null)
 }
 %>
 <div id="settings">
- <ul>
-      <li><image src="settings.png" alt="setting" title="settings" class="avatar23">
-        <ul id="haris" class="lefty">
-          <li><a>change username</a></li>
-          <li><a>change password</a></li>
-            <li><a href="daojsp/Logout.jsp">logout</a></li>
-        </ul>
-     </li>
-    </ul>
-    </div>
+	<ul>
+		<li><image src="settings.png" alt="setting" title="settings"
+				class="avatar23">
+			<ul id="haris" class="lefty">
+				<li><a>change username</a></li>
+				<li><a>change password</a></li>
+				<li><a href="daojsp/Logout.jsp">logout</a></li>
+			</ul></li>
+	</ul>
+</div>
 <head>
 <link rel=stylesheet type="text/css" href="style/style1.css">
-     
+
 </head>
 
 <header>
-<% String uname1 = (String)session.getAttribute("uname"); %>
-<h1>
-	This is
-	<%=uname1%>
-	page
-   
-</h1>
+	<% String uname1 = (String)session.getAttribute("uname"); %>
+	<h1>
+		This is
+		<%=uname1%>
+		page
+
+	</h1>
 </header>
 <body>
-    
+	<div id="profilepic">
+		<%
+String s="smiley1.png";
+%>
+		<image src=<%=s%> alt="profilepic" title="profilepic"
+			class="profilepic">
+	</div>
 	<div class=UserDetails>
-        <label for="pics">upload pics for ur friends</label>
-        <input type="file" name="file" id="pics">   
-		<p>what can i say, this is my first project given by my friend</p>
+		<label for="pics">upload pics for ur friends</label>
+		<form action="FileUpload.jsp" method="post"
+			enctype="multipart/form-data">
+			<input type="file" name="file" id="pics"> 
+			<input type="submit" id="upload" value="upload">
+		</form>
+		<br>
+		<br>
+		<br>
+		<br>
+		<p>what can i say,this is my first project given by my friend</p>
 		<form action="videos.jsp">
 			<input id="vid" type="submit" value="videos">
 		</form>
