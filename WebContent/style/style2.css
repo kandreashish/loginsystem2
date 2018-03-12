@@ -1,0 +1,87 @@
+html
+{
+    background-image: url("skamath-HD-Wallpapers1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+input[type=submit]
+{
+    font-size: 18px;
+    outline: none;
+    font-family: monospace;
+    width: 180px;
+    height: 23px;
+    border-radius: 20px;
+    background-color: red;
+    border: none;
+    font-weight: bold;
+    color: black;
+    box-shadow: 3px 3px 1px yellow;
+    margin: 10 auto;
+    position: absolute;
+    top: 250px;
+    left:28%;
+}
+input[type=submit]:hover
+{
+    cursor: pointer;
+    background-color: yellow;
+    color: black;
+}
+#skip
+{
+    top:285px;
+}
+#dp51
+{
+    position: absolute;
+    top:30%;
+    left:35%;
+    width: 400px;
+    height:400px;
+    background: black;
+    color: whitesmoke;
+    border-radius: 8px;
+    box-shadow: 4px 4px 2px yellow;
+}
+input[type=file]
+{
+    margin: 0px;
+    padding top: 0px;
+    width: 175px;
+    height: 18px;
+    outline: none;
+    position: absolute;
+    top: 53%;
+    left: 28%;
+    color: black;
+}
+#skip
+{
+    top:285px;
+}
+#choose
+{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    left: 25%;
+    position: absolute;
+}
+#head
+{
+ width : 80%;
+background-color: black;
+color: white;
+left: 150px;
+position: absolute;
+text-align: center;
+box-sizing: border-box;
+border-radius: 8px;
+}
+h2
+{
+    margin:0px;
+    margin-left: 100px;
+}

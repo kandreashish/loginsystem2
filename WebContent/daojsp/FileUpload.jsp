@@ -25,14 +25,15 @@ List<FileItem> list= sf.parseRequest(request);
 for(FileItem item:list)
 {
 	System.out.println();
-	if(item.getName().substring((item.getName().length()-4),(item.getName().length())).equals(".jpg")||item.getName().substring((item.getName().length()-4),(item.getName().length())).equals(".png"))
+	System.out.println(item.getName().substring((item.getName().length()-4)));
+	if(item.getName().substring((item.getName().length()-4),(item.getName().length())).equalsIgnoreCase(".jpg")||item.getName().substring((item.getName().length()-4),(item.getName().length())).equalsIgnoreCase(".png"))
 	{
 	item.write(new File("/Users/ashish/loginsystem1/WebContent/images/"+item.getName()));
-	response.sendRedirect("message.jsp?upload=success");
+	response.sendRedirect("../message.jsp?upload=success");
 	}
 	else
 	{
-		response.sendRedirect("message.jsp?choose a imagefile");	
+		response.sendRedirect("../message.jsp?choose=imagefile");	
 	}
 }
 System.out.println("uploaded");
@@ -40,10 +41,11 @@ System.out.println("uploaded");
 }
 catch(FileNotFoundException e)
 {
-	response.sendRedirect("message.jsp?choose a file");
+	response.sendRedirect("../message.jsp?choose=a file");
 }
 catch (Exception e) {
 	System.out.println(e);
+	response.sendRedirect("../message.jsp?choose=a file");
 }
 %>
 </body>
