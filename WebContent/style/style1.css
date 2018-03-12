@@ -55,7 +55,7 @@ p
 }
 input[type=file]
 {
-	font-size: 17px;
+	font-size: 18px;
     outline: none;
     font-family: monospace;
     width: 320px;
@@ -160,4 +160,11 @@ a
 {
     text-decoration: none;
     color: black;
+}
+#video1
+{
+  position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 500px;
 }

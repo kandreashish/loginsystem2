@@ -4,7 +4,11 @@
 <html>
     <link rel="stylesheet" type="text/css" href="style\Signupstyle.css">
     <title>hello brothers</title>
+    <head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    </head>
     <header id=head>
+    
         <h1>welcome to SignUp page</h1>
     <script  type="text/javascript" src="script\validate.js"></script>
     </header>

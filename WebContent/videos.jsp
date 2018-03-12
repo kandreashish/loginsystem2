@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="style/style1.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-</head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
 <%
  response.setHeader("Cache-Control","no-cache");
  response.setHeader("Cache-Control","no-store");
@@ -17,6 +17,8 @@ if(session.getAttribute("uname")== null)
 	response.sendRedirect("index.jsp?pleaselogin=first");
 }
 %>
+</head>
+<body>
 <div id="settings">
  <ul>
       <li><image src="settings.png" alt="setting" title="settings" class="avatar23">
@@ -28,10 +30,9 @@ if(session.getAttribute("uname")== null)
      </li>
     </ul>
  </div>
-<div id=video>
+<div id="video1">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gQLQ0t9B5yk" ></iframe>
 <br>
 </div>
-<body>
 </body>
 </html>

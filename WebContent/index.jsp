@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel=stylesheet type="text/css" href="style\style.css">
 <script type="text/javascript" src="script\function.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
 </head>
 
 
@@ -37,6 +38,12 @@
 	<input type="hidden" id="demo" value="first" name="hidden">
 	<%
 		}
+	    if(u31!=null && u31.equals("success"))
+	    {
+	    	%>
+	    	<input type="hidden" id="demo" value="success" name="hidden">
+	    	<%
+	    }
 	%>
 	<div id="main" class="loginbox">
 		<img src="smiley1.png" alt="avator" title="ashish" class="avatar2">

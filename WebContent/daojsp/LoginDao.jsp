@@ -66,7 +66,7 @@ if(x!=null && x.equals("confirm"))
 		else if(check(username,password))
 		{
 			session.setAttribute("uname",username);
-			response.sendRedirect("../message.jsp?welcomeuser");
+			response.sendRedirect("../profilepic.jsp?welcomeuser");
 		}
 		else
 		{

@@ -3,7 +3,7 @@
 <%@ page import="g.*"%>
 <!doctype html>
 <html>
-<script type=text/javascript src="script/validate.js"></script>
+<script type=text/javascript src="script/function.js"></script>
 <title>home page</title>
 <%
  response.setHeader("Cache-Control","no-cache");
@@ -15,6 +15,9 @@ if(session.getAttribute("uname")==null)
 	response.sendRedirect("index.jsp?pleaselogin=first");
 }
 %>
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+</head>
 <div id="settings">
 	<ul>
 		<li><image src="settings.png" alt="setting" title="settings"
@@ -40,7 +43,27 @@ if(session.getAttribute("uname")==null)
 
 	</h1>
 </header>
-<body>
+<body onload="message()">
+	<%
+		String u31 = request.getParameter("choose");
+		if (u31 != null && u31.equals("imagefile")) {
+	%>
+	<input type="hidden" id="demo" value="imagefile" name="hidden">
+	<%
+		}
+		if (u31 != null && u31.equals("a file")) {
+			%>
+			<input type="hidden" id="demo" value="afile" name="hidden">
+			<%
+				}
+		String u32 = request.getParameter("upload");
+		if (u32 != null && u32.equals("success")) {
+			%>
+			<input type="hidden" id="demo" value="success" name="hidden">
+			<%
+				}
+		
+	%>
 	<div id="profilepic">
 		<%
 String s="smiley1.png";
@@ -50,15 +73,12 @@ String s="smiley1.png";
 	</div>
 	<div class=UserDetails>
 		<label for="pics">upload pics for ur friends</label>
-		<form action="FileUpload.jsp" method="post"
+		<form action="daojsp/FileUpload.jsp" method="post"
 			enctype="multipart/form-data">
-			<input type="file" name="file" id="pics"> 
-			<input type="submit" id="upload" value="upload">
+			<input type="file" name="file" id="pics"> <input
+				type="submit" id="upload" value="upload">
 		</form>
-		<br>
-		<br>
-		<br>
-		<br>
+		<br> <br> <br> <br>
 		<p>what can i say,this is my first project given by my friend</p>
 		<form action="videos.jsp">
 			<input id="vid" type="submit" value="videos">
