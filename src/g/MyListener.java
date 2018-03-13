@@ -5,45 +5,48 @@ import java.sql.*;
 public class MyListener implements ServletContextListener{
 
 	public void contextInitialized(ServletContextEvent arg0) {
-		int status=0;
+		boolean status=false;
 		Connection con=null;
-	
-      try{
-		con=GetCon.getCon();
-		PreparedStatement ps1=con.prepareStatement("Select * from NEWACCOUNT");
-	
-      try{
-		status=ps1.executeUpdate();
-		}
+		PreparedStatement ps1=null;
 
-      catch(Exception e)
-		{e.printStackTrace();
-		 status=2;
-		 System.out.println("my staus is "+status);
-		 }		
-		
-       if(status==0)
-		{System.out.println("your table name already exist"+status);}
-		
-         
-       else if(status==2) 
-		
-        {System.out.println("else if part table does not exist new table has created"+status);
-		//PreparedStatement ps3=con.prepareStatement("CREATE SEQUENCE javatpointnewaccount MINVALUE 1 MAXVALUE 999999999999 INCREMENT BY 1 START WITH 1 NOCACHE  NOORDER  NOCYCLE");
-		//ps3.executeUpdate();
-		
-		PreparedStatement ps=con.prepareStatement("CREATE TABLE  NEWACCOUNT(ACCOUNTNO int(11) primary key,USERNAME VARCHAR(400),PASSWORD VARCHAR(400),REPASSWORD VARCHAR(400),AMOUNT int(50),ADDERESS VARCHAR(400),PHONE int(50))");
-		ps.executeUpdate();
-		
+		try{
+			con=GetCon.getCon();
+			ps1=con.prepareStatement("Select * from login");
+
+			try{
+				System.out.println(status);
+				status=ps1.execute();
+			}
+
+			catch(Exception e)
+			{System.out.println(e);
+			status=false;
+			System.out.println("your table status is "+status);
+			}		
+
+			if(status==true)
+			{System.out.println("your table already exist "+status);}
+
+
+			else if(status==false) 
+			{
+				System.out.println("table does not exist so new table has been created ");
+
+				PreparedStatement ps=con.prepareStatement("create table login(id int(10) primary key auto_increment,uname varchar(50),password varchar(50),date varchar(50),mnumber long,photos varchar(500),active int(2));");
+				ps.executeUpdate();
+
+			}
+			else{System.out.println("unknown "+status);
+			}
 		}
-		else{System.out.println("else part "+status);
-		}
-       }
-	    catch(Exception e)
-      {e.printStackTrace();}
-	    }
-	    public void contextDestroyed(ServletContextEvent arg0) {
-		System.out.println("project undeployed");
-		
+		catch(Exception e)
+		{
+			System.out.println(e);
+			}
+	}
+	
+	public void contextDestroyed(ServletContextEvent arg0) {
+		System.out.println("project is undeployed");
+
 	}
 }

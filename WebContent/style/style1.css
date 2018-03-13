@@ -14,10 +14,11 @@ html
 .profilepic
 {
     position: absolute;
-    top:5%;
+    top:15%;
     left:5%;
-	width:50px;
-	height:50px;
+	width:200px;
+	height:200px;
+	border-radius: 50%;
 }
 header
 {
@@ -167,4 +168,18 @@ a
     top: 30%;
     left: 30%;
     width: 500px;
+}
+#erro1
+{
+	color: black;
+	font-size: 14px;
+	font-family: sans-serif;
+	margin: 0px;
+}
+#erro
+{
+	color: red;
+	font-size: 14px;
+	font-family: sans-serif;
+	margin: 0px;
 }

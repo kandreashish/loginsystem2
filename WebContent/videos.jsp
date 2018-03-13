@@ -17,7 +17,20 @@ if(session.getAttribute("uname")== null)
 	response.sendRedirect("index.jsp?pleaselogin=first");
 }
 %>
+
 </head>
+<header>
+	<% String uname1 = (String)session.getAttribute("uname"); %>
+	<h1>
+		This is
+		<%=uname1%>
+		page
+
+	</h1>
+</header>
+<div id="profilepic">
+		<jsp:include page="pic.jsp"></jsp:include>
+	</div>
 <body>
 <div id="settings">
  <ul>

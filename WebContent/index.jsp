@@ -5,7 +5,7 @@
 <title>login form</title>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel=stylesheet type="text/css" href="style\style.css">
+<link rel=stylesheet type="text/css" href="style\style4.css">
 <script type="text/javascript" src="script\function.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
 </head>
@@ -28,7 +28,7 @@
 	}
 %>
 <header id=head>
-	<h1>welcome to Login page</h1>
+	<h1>welcome to Login page savage</h1>
 </header>
 <body onload="ale()">
 	<%
@@ -41,8 +41,8 @@
 	    if(u31!=null && u31.equals("success"))
 	    {
 	    	%>
-	    	<input type="hidden" id="demo" value="success" name="hidden">
-	    	<%
+	<input type="hidden" id="demo" value="success" name="hidden">
+	<%
 	    }
 	%>
 	<div id="main" class="loginbox">
@@ -60,8 +60,8 @@
 				}
 			%>
 			<input id="username" type="text" id="Username" name="uname"
-				title="Enter Username" placeholder="Enter UserName"><br>
-			<label class="tit" for="password">Password</label>
+				title="Enter Username" placeholder="Enter UserName"> <label
+				class="tit" for="password">Password</label>
 			<%
 				String u2 = request.getParameter("passwor");
 				if (u2 != null && u2.equals("wrong")) {
@@ -69,9 +69,8 @@
 					out.write("<p id='erro'>wrong password</p>");
 
 				}
-			%><br> <input type="password" id="password"
-				name="pass" placeholder="password" title="Enter password" required>
-			<br>
+			%> <input type="password" id="password" name="pass"
+				placeholder="password" title="Enter password" required> <br>
 			<button type="submit" name="submit" value="confirm" title="login">Login</button>
 			<br> <a href="">Forgot password</a><br> <a
 				href="signup1.jsp">Don't have an account</a>

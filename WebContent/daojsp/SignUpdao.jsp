@@ -2,17 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*"%>
+<%@ page import="g.*"%>
 <%@ page import="java.sql.DriverManager"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.SQLException"%>
-<%
-	String url = "jdbc:mysql://localhost:3306/db";
-	String username = "root";
-	String password = "1234";
-	Connection con = null;
-	PreparedStatement st = null;
-%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,33 +16,22 @@
 </head>
 <body>
 	<%!public void insert(String user, String pass, String date, String tel) {
-		String url = "jdbc:mysql://localhost:3306/db";
-		String username = "root";
-		String password = "1234";
-		String sql = "insert into login(uname,password,date,mnumber)values(?,?,?,?)";
-		Connection con = null;
-		PreparedStatement st = null;
+		String sql = "insert into login(uname,password,date,mnumber,active)values(?,?,?,?,?)";
+	
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection(url, username, password);
-			st = con.prepareStatement(sql);
+			Connection con1 = GetCon.getCon();
+			PreparedStatement st = con1.prepareStatement(sql);
 			st.setString(1, user);
 			st.setString(2, pass);
 			st.setString(3, date);
 			st.setString(4, tel);
+			st.setInt(5, 0);
 			st.executeUpdate();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println(e);
-		} finally {
-			try {
-				st.close();
-				con.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
+		} 
 	}
 
 	public boolean check(String user) {

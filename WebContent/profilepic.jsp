@@ -25,11 +25,20 @@ if(session.getAttribute("uname")==null)
 <body>
 
  <div id="dp51">
-  <form action="daojsp/FileUpload.jsp" method="post" enctype="multipart/form-data">
+  <form action="daojsp/FileUpload2.jsp" method="post" enctype="multipart/form-data">
     <h2>Upload a cute pic</h2>  
     <label class="label1" for="dpchange"><img src="avatar.b6a87.png" id="choose"></label>    
     <input id="dpchange" type="file" name="profile"><br>
-    <input type="submit" value="upload"/>   
+    <input type="submit" value="upload"/>
+    <%
+    String u31 = request.getParameter("choose");
+				if (u31 != null && u31.equals("a file")) {
+					out.write("<p id='erro1'>please choose a file</p>");
+				}
+				if (u31 != null && u31.equals("imagefile")) {
+					out.write("<p id='erro1'>please choose image file</p>");
+						}
+			    %>   
   </form>
   <form action="message.jsp">
   <input type="submit" value="skip" id="skip"/>
