@@ -35,15 +35,15 @@
 	}
 
 	public boolean check(String user) {
-		String url = "jdbc:mysql://localhost:3306/db";
-		String username = "root";
-		String password = "1234";
+	//	String url = "jdbc:mysql://localhost:3306/db";
+		//String username = "root";
+	//	String password = "1234";
 		String sql = "select uname from login where uname=?";
 		Connection con = null;
 		PreparedStatement st = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection(url, username, password);
+			//Class.forName("com.mysql.jdbc.Driver");
+			con = GetCon.getCon();
 			st = con.prepareStatement(sql);
 			st.setString(1, user);
 			ResultSet rs = st.executeQuery();

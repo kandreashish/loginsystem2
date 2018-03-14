@@ -6,6 +6,6 @@
   </welcome-file-list>
  
   <listener>
-  <listener-class>g.MyListener</listener-class>
+  <listener-class>g.MyListenerpostgre</listener-class>
   </listener>
 </web-app>

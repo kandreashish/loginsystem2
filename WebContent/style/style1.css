@@ -11,14 +11,20 @@ html
     background-attachment: fixed;
     background-size: cover;
 }
-.profilepic
+#profilepic
+{
+	height: 200px;	
+	width: 200px;
+	background-color: black;
+}
+.heroimage
 {
     position: absolute;
     top:15%;
     left:5%;
-	width:200px;
-	height:200px;
-	border-radius: 50%;
+	width:100px;
+	height:100px;
+	border-radius:50%;
 }
 header
 {

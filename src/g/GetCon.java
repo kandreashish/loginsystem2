@@ -6,8 +6,8 @@ private GetCon(){}
 public static Connection con;
 static{
 	try {
-		Class.forName(DBIntializer.DRIVER);
-		con=DriverManager.getConnection(DBIntializer.CON_STRING,DBIntializer.USERNAME,DBIntializer.PASSWORD);
+		Class.forName(DBIntializer1.DRIVER);
+		con=DriverManager.getConnection(DBIntializer1.CON_STRING,DBIntializer1.USERNAME,DBIntializer1.PASSWORD);
 	} catch (ClassNotFoundException e) {
 		
 		e.printStackTrace();

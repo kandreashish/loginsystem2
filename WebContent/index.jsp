@@ -60,8 +60,8 @@
 				}
 			%>
 			<input id="username" type="text" id="Username" name="uname"
-				title="Enter Username" placeholder="Enter UserName"> <label
-				class="tit" for="password">Password</label>
+				title="Enter Username" placeholder="Enter UserName"><br>
+		<label class="tit" for="password">Password</label>
 			<%
 				String u2 = request.getParameter("passwor");
 				if (u2 != null && u2.equals("wrong")) {
@@ -69,7 +69,7 @@
 					out.write("<p id='erro'>wrong password</p>");
 
 				}
-			%> <input type="password" id="password" name="pass"
+			%> <br><input type="password" id="password" name="pass"
 				placeholder="password" title="Enter password" required> <br>
 			<button type="submit" name="submit" value="confirm" title="login">Login</button>
 			<br> <a href="">Forgot password</a><br> <a
